@@ -24,7 +24,7 @@ console.log(globalName); /* 전역변수에 접근해서 값이 나옴 */
 
 // ES 6 이전 변수 선언 -> var(단 이제는 사용 지양할 것)
 // JS는 값을 설정하지 않아도 값을 호출 할 수는 있음(var 이용) -> undefined 출력
-/* var hoisting (move declaration from bottom to top) / 때문에 발생 
+/* var hoisting (move declaration from bottom to top) -> 때문에 발생 
   호이스팅 : 어디에 선언했더라도 선언을 맨 위로 끌어올리는 것 */
 // var 는 block scope도 없음 (block을 무시)
 {
@@ -72,7 +72,7 @@ console.log(infinity);
 console.log(negativeInfinity);
 console.log(nAn);
 
-// bigInt (fairly new, don't use it yet) -> 숫자 맨 뒤에 n 추가
+// bigInt (fairly new, don't use it yet) -> 숫자 맨 뒤에 n 추가(이런게 있다 정도로 알면 됨)
 const bigInt = 1234567890123456789012345678901234567890n; // over -2*53 ~ 2*53
 console.log(`value : ${bigInt}, type : ${typeof bigInt}`);
 
@@ -83,7 +83,7 @@ const hello = "Hello " + macaron;
 console.log(`value : ${hello}, type : ${typeof hello}`);
 const helloBob = `hi ${macaron}!`; //template literals(=string) -> 변수의 값이 자동으로 붙여나옴
 console.log(`value : ${helloBob}, type : ${typeof helloBob}`);
-/* backtick 미사용시 이렇게 하나씩 설정해야 함 */
+// backtick 미사용시 이렇게 하나씩 설정해야 함
 console.log("value : " + helloBob +  "type : " + typeof helloBob);
 
 // boolean
@@ -102,7 +102,7 @@ console.log(`value : ${nothing}, type : ${typeof nothing}`);
 let x;
 console.log(`value : ${x}, type : ${typeof x}`);
 
-// sumbol, create unique identifiers for objects
+// symbol, create unique identifiers for objects
 // 다른 자료구조에서 고유한 식별자가 필요할때나 우선순위를 구별할때 사용
 const symbol1 = Symbol("id");
 const symbol2 = Symbol("id");
@@ -111,13 +111,13 @@ console.log(symbol1 === symbol2); /* 동일한 string을 설정하여도 false�
 const gsymbol1 = Symbol.for("id");
 const gsymbol2 = Symbol.for("id");
 console.log(gsymbol1 === gsymbol2);
-// symbol.description -> 그냥 symbol 출력하면 에러 발생!
+// symbol.description -> 그냥 symbol을 출력하면 에러 발생!
 console.log(`value : ${symbol1.description}, type : ${typeof symbol1.description}`);
 
 // object, real-life object, data structure
 const ellie = {name : "ellie", age : 20};
 // ellie가 가리키는 메모리의 포인터는 잠겨있어 다른 오브젝트로 할당 불가
-// ellie에 속한 변수들은 수정가능 
+// 하지만, ellie에 속한 변수들은 수정가능
 ellie.age = 21;
 
 
