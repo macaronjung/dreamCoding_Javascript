@@ -4,7 +4,7 @@
 
 "use strict";
 
-// 2. Variable(변수)
+// 2. Variable(변수), re(read/write) -> 메모리에 값을 읽고 쓰기 가능
 // let (added in ES 6)
 
 // 각 변수는 메모리에 할당 됨
@@ -40,6 +40,8 @@ console.log(age);
 /* age2 = 4;
 let age2; */
 
+// 3. Constant, r(read only) -> 읽기만 가능(자물쇠가 생김!)
+// use const whenever possible -> JS에서는 특별한 경우 아니면 const 사용
 // Immutable type
 // favor immutable data type always for a few reasons:
 //  - security
@@ -50,9 +52,9 @@ const daysInWeek = 7;
 const maxNumber = 5;
 
 // Variable types
-/* primitive, single item(더 이상 작은 단위로 나눠질 수 없는 타입) 
+/* primitive, single item(더 이상 작은 단위로 나눠질 수 없는 타입) -> 메모리에 값이 바로 저장
   -> number, string, boolean, null, undefiend, symbol*/
-// object, box container(single type을 여러개 묶어 관리하는 타입)
+// object, box container(single type을 여러개 묶어 관리하는 타입) -> 오브젝트가 가리키는 곳에 레퍼런스가 저장되어 있음
 // function, first-class function -> 변수 할당 가능, 함수의 인자(파라미터)로 전달가능, 함수 리턴값으로 사용가능
 
 // JS에서는 number type 을 직접적으로 지정 가능(int,double... 필요 없이 바로)
