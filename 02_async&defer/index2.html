@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="main.js"></script>
+  <!-- 브라우저가 HTML을 위에서 밑으로 읽어 내려가다가 스크립트를 만남 
+      parsing HTML을 잠시 멈추고 필요한 JS 파일을 다운로드 받음(fetching JS) 
+      JS 파일을 실행함(executing JS) 그 다음 파싱을 재개함 
+      인터넷 속도가 느리면 페이지 로딩이 길어짐 -->
+
+      <script async src="main.js"></script>
+      <!-- async 사용시 parsing HTML과 fetching을 병렬로 실시 
+          JS가 다운로드 완료시 executing JS 후 parsing HTML 마무리 -> 여기서 로딩이 조금 더 발생 가능 
+          JS가 HTML 다운 전에 실행되므로 쿼리 셀럭터나 DOM요소등을 실행시
+          HTML이 아직 없는 상황 때문에 조작할 수 있는 요소가 없을 수도 있음 -->
+      <!-- 정의된 순서와 상관없이(JS가 여러개 이면) 다운로드 된 순서대로 실행 됨 -->
+
+      <script defer src="main.js"></script>
+      <!-- parsing HTML 과 fetching JS를 동시에 실시 
+          파싱 HTML 종료시 JS 실행(가장 좋은 방법) -->
+      <!-- 순서대로 실행 됨(다운로드와 실행이 별개이므로) -->
+</head>
+<body>
+  <div></div>
+  <script src="main.js"></script>
+  <!-- parsing HTML을 먼저 실시하고 JS 다운과 실행을 실시함 
+      페이지가 JS에 의존적이면 사용자가 의미있는 컨텐츠를 보기 위해서는 로딩시간을 기다려야함 -->
+</body>
+</html>
